@@ -1,14 +1,17 @@
 package clanmelee;
 
 /**
- * Classes that implement ActionPointDecider can be used to define a ClanMember's strategy
+ * Classes implement ActionPointDecider which can be used to define a ClanMember's strategy
  */
 public interface ActionPointDecider {
     /**
      *
-     * @param player    the ClanMember doing the deciding
-     * @param target the ClanMember that the player is interacting
-     * @return      the number of points to attack or heal with. 0 or less to run away.
+     * @param player    the player who's turn it is
+     * @param target the character that the player wants to interact with
+     * @return      the magnitude of an action (attacking or healing) . A player runs away if Action points are 0 or
+     *              less.
      */
     public int decideActionPoints(ClanMember player, ClanMember target);
+
+
 }
