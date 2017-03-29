@@ -10,32 +10,43 @@ public abstract class Clan {
     private final int clanID;
 
     /**
-     * Constructor
+     * @Purpose: Constructor that creates a clan
      *
-     * @param clanName name of the clan
-     * @param clanID   the clan's unique ID
+     * @param: clanName name of the clan
+     * @param: clanID   the clan's unique ID
+     *
+     * @return: None (Is a constructor).
      */
     public Clan(String clanName, int clanID) {
         this.clanName = clanName;
         this.clanID = clanID;
     }
+    
 
     /**
-     * get the ID passed to the constructor
+     * @Purpose: Gets the clan ID
+     *
+     * @param: None
+     *
+     * @Return: The clan ID.
      */
     public int getClanID() {
         return clanID;
     }
 
     /**
-     * get the name passed to the constructor
+     * @Purpose: Gets the clan name.
+     *
+     * @Param: None
+     *
+     * @Return: The clan's name.
      */
     public String getClanName() {
         return clanName;
     }
 
     /**
-     * Concrete clans implement this factory method to produce clan members
+     * @Purpose: Concrete clans implement this factory method to produce clan members
      *
      * @param hitPoints the number of hit points to be distributed amongst all the clan members
      * @return the clan's members

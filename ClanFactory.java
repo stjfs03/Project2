@@ -6,7 +6,15 @@ import clanmelee.Clan2.Clan2;
 import java.util.ArrayList;
 import java.util.Collection;
 
+/**
+ * Class that creates the Clans that will be in the battle.
+ */
 public class ClanFactory {
+
+    /**
+     * Creates ArrayList of the amount of clans wanted in battle.
+     * @return ArrayList of clans created.
+     */
     public Collection<Clan> getClans() {
         ArrayList<Clan> clans = new ArrayList<>();
 

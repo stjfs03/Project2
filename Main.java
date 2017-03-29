@@ -3,7 +3,7 @@ package clanmelee;
 import java.util.Collection;
 import java.util.Random;
 
-public class Main {
+public class 9Main {
     private static Random rand = new Random();
 
     private static int wiggle(int original) {

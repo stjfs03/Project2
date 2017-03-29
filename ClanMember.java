@@ -1,23 +1,50 @@
 package clanmelee;
 
-import static clanmelee.ClanMeleeConstants.*;
-
 /**
  * All clan members are of this class. Each clan member's strategy is defined
  * by its ActionPointDecider
  */
 public class ClanMember {
-    // Each clan member must be either a warrior or a healer
+
+    /**
+     * Each clan member can either be a Warrior or a Healer; nothing else
+     */
     public enum ClanMemberType {WARRIOR, HEALER};
 
+    /**
+     * Represents what Clan the ClanMember is a part of.
+     */
     private final int clanID;
+
+    /**
+     * the type of member the ClanMember is; ie. Warrior or Healer.
+      */
     private final ClanMemberType type;
 
-    // Each clan mamber starts off with hitPoints == maxHitPoints. Attack
-    // damage decreases hitPoints. Iteration damage decreases both hitPoints
-    // and maxHitPoints.
+    // Each clan mamber starts off with hitPoints == maxHitPoints.
+    // Attack damage decreases hitPoints.
+    // Iteration damage decreases both hitPoints and maxHitPoints.
+
+    /**
+     * The maximum number of Hit Points a ClanMember can have at any one time
+     */
     private int maxHitPoints;
+
+    /**
+     * The highest input someone can input for maxHitPoints.
+     */
+    public static final int HIT_POINT_CAP = 1000;
+
+    /**
+     * The current number of Hit Points a ClanMember has.
+     */
     private int hitPoints;
+
+    // number of action points that do not cost additional iteration damage
+    public static final int FREE_ACTION_POINTS = 10;
+
+    // number of extra action points which cost a single iteration damage point
+    public static final int ACTION_POINTS_PER_ITERATION_DAMAGE_POINT = 2;
 
     // The decider decides whether to act or to run away, and how many points
     // to attack or heal with.
@@ -67,6 +94,7 @@ public class ClanMember {
         return maxHitPoints;
     }
 
+
     /**
      * Public way to get action points. Ensures no more than the max allowed
      * action points are returned.
@@ -74,6 +102,7 @@ public class ClanMember {
      * @param other the clan member that this clan member is up against
      * @return      the number of points to attack or heal with. 0 to run away.
      */
+
     public int getActionPoints(ClanMember other) { // Don't call this
         int actionPoints = decider.decideActionPoints(this, other);
 
