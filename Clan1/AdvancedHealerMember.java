@@ -8,12 +8,26 @@ import java.util.ArrayList;
 
 import static clanmelee.ClanMember.ClanMemberType.HEALER;
 
+/**
+ * @Purpose: Defines the AdvancedHealerMember clan member
+ *
+ */
 public class AdvancedHealerMember extends Clan{
 
+    /**
+     * @purpose: Instantiates an AdvancedHealerMember
+     * @param: clanID - Unique number identifying the clan.
+     * @return: None (constructor)
+     */
     public AdvancedHealerMember(int clanID) {
         super("Advanced Healer", clanID);
     }
 
+    /**
+     * @Purpose: Getter for a clan's members
+     * @param hitPoints the number of hit points to be distributed amongst all the clan members
+     * @return: An array list containing all the clan's members.
+     */
     @Override
     public ArrayList<ClanMember> getClanMembers(int hitPoints) {
         ArrayList<ClanMember> clanMembers = new ArrayList<>();
