@@ -1,12 +1,11 @@
-
 package clanmelee;
-
-import static clanmelee.ClanMember.ClanMemberType.HEALER;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+
+import static clanmelee.ClanMember.ClanMemberType.HEALER;
 
 public class ClanMelee {
     ClansWins clansWins = new ClansWins();

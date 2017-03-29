@@ -9,17 +9,21 @@ public class ClanWins implements Comparable<ClanWins> {
         this.wins = 0;
     }
 
+    // increments the private variable wins by 1.
     public void addWin() {
         wins += 1;
     }
 
+    // returns the private variable name.
     public String getName() {
         return name;
     }
 
+    // returns the private variable wins.
     public int getWins() {
         return wins;
     }
+
 
     @Override
     public int compareTo(ClanWins other) {
