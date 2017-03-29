@@ -21,6 +21,7 @@ public abstract class Clan {
         this.clanName = clanName;
         this.clanID = clanID;
     }
+    
 
     /**
      * @Purpose: Gets the clan ID
