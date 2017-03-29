@@ -21,10 +21,6 @@ public class ClanMember {
       */
     private final ClanMemberType type;
 
-    // Each clan mamber starts off with hitPoints == maxHitPoints.
-    // Attack damage decreases hitPoints.
-    // Iteration damage decreases both hitPoints and maxHitPoints.
-
     /**
      * The maximum number of Hit Points a ClanMember can have at any one time
      */
@@ -37,6 +33,9 @@ public class ClanMember {
 
     /**
      * The current number of Hit Points a ClanMember has.
+     * Each clan member starts off with hitPoints == maxHitPoints.
+     * Attack damage decreases hitPoints.
+     * Iteration damage decreases both hitPoints and maxHitPoints.
      */
     private int hitPoints;
 
@@ -46,8 +45,8 @@ public class ClanMember {
     // number of extra action points which cost a single iteration damage point
     public static final int ACTION_POINTS_PER_ITERATION_DAMAGE_POINT = 2;
 
-    // The decider decides whether to act or to run away, and how many points
-    // to attack or heal with.
+    // Decides whether to act or to run away,
+    // if they act decides how many points to attack or heal with.
     private ActionPointDecider decider;
 
     /**
@@ -55,8 +54,8 @@ public class ClanMember {
      *
      * @param clanID     the member's clan's unique clan ID
      * @param type       ClanMemberType.WARRIOR or ClanMemberType.HEALER
-     * @param hitPoints  initial number of hit points
-     * @param decider    implements the clan member's strategy
+     * @param hitPoints  Sets the maximum number of Hit Points and starting Hit Points
+     * @param decider    implements the Clan Member's strategy
      */
     public ClanMember(int clanID, ClanMemberType type, int hitPoints,
                       ActionPointDecider decider) {
@@ -64,7 +63,7 @@ public class ClanMember {
         this.type = type;
         this.decider = decider;
 
-        // Respect the limit on an individual clan member's hit points
+        // Forces the Hit Point Cap to to equal HIT_POINT_CAP if the input was greater then HIT_POINT_CAP (1000)
         if (hitPoints > HIT_POINT_CAP)
             this.maxHitPoints = HIT_POINT_CAP;
         else
@@ -102,15 +101,17 @@ public class ClanMember {
      * @return      the number of points to attack or heal with. 0 to run away.
      */
 
-    public int getActionPoints(ClanMember other) { // Don't call this
+    public int getActionPoints(ClanMember other) {
         int actionPoints = decider.decideActionPoints(this, other);
 
         // the most action points this clan member can afford in hit points
         int maxActionPoints = hitPoints * ACTION_POINTS_PER_ITERATION_DAMAGE_POINT
-                + FREE_ACTION_POINTS;
+                + FREE_ACTION_POINTS; // ((Hit Points*2) + 10);
 
+        // sets actionPoints to maxActionPoints if actionPoints is greater then maxActionPoints
         if (actionPoints > maxActionPoints)
             actionPoints = maxActionPoints;
+
 
         dealIterationDamage(actionPoints);
 
@@ -123,9 +124,13 @@ public class ClanMember {
      * @param actionPoints number of action points dealt this iteration
      */
     public void dealIterationDamage(int actionPoints) {
+
         if (actionPoints > FREE_ACTION_POINTS) {
-            int damage = (actionPoints - FREE_ACTION_POINTS - 1)
-                    / ACTION_POINTS_PER_ITERATION_DAMAGE_POINT + 1;
+
+            int damage = (actionPoints - FREE_ACTION_POINTS - 1) / ACTION_POINTS_PER_ITERATION_DAMAGE_POINT + 1;
+            // (action points - 10-1)/(2+1)
+
+            // Inflicts damage to this clan members Hit Points
             dealDamage(damage);
         }
 
@@ -135,8 +140,8 @@ public class ClanMember {
     }
 
     /**
-     * Heal the clan member by a certain number of points. The clan member's
-     * hit points will not exceed the maximum hit point limit
+     * Heal the clan member by a certain number of points.
+     * The clan member's hit points will not exceed their maximum hit point limit
      *
      * @param healPoints number of points to heal by
      */
@@ -147,8 +152,8 @@ public class ClanMember {
     }
 
     /**
-     * Decrease the clan member's hit points by a certain number of points. Will
-     * not decrease the number of hit points below 0
+     * Decrease the clan member's hit points by a certain number of points.
+     * Will not decrease the number of hit points below 0
      *
      * @param damagePoints number of points of damage
      */
@@ -159,7 +164,7 @@ public class ClanMember {
     }
 
     /**
-     * @return true if the clan member has more than 0 hit points, false otherwise
+     * @return true if the clan member has more than 0 hit points, otherwise it will return false
      */
     public boolean isAlive() {
         return hitPoints != 0;
