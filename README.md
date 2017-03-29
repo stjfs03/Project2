@@ -107,7 +107,7 @@ the top clan, 2 to the second, and 1 to the third.
 
 ### Clan Members
 
-Your clan must contain at least four different kinds of clan members. Make at
+Your clan must contain at least four different kinds of clan members. At
 least 2 types of healers and 2 types of warriors.
 
 ### Factories

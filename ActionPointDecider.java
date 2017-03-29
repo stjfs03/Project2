@@ -6,9 +6,9 @@ package clanmelee;
 public interface ActionPointDecider {
     /**
      *
-     * @param me    the ClanMember doing the deciding
-     * @param other the ClanMember that me is engaging with
-     * @return      the number of points to attack or heal with. 0 to run away.
+     * @param player    the ClanMember doing the deciding
+     * @param target the ClanMember that the player is interacting
+     * @return      the number of points to attack or heal with. 0 or less to run away.
      */
-    public int decideActionPoints(ClanMember me, ClanMember other);
+    public int decideActionPoints(ClanMember player, ClanMember target);
 }
