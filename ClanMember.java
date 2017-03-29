@@ -24,6 +24,7 @@ public class ClanMember {
     private ActionPointDecider decider;
 
     /**
+     *
      * Constructor
      *
      * @param clanID     the member's clan's unique clan ID
