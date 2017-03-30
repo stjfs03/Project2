@@ -10,25 +10,37 @@ public class SimpleHealerDecider implements ActionPointDecider {
         this.actionPoints = actionPoints;
     }
 
-    @Override
-    public int decideActionPoints(ClanMember self, ClanMember opponent) {
-        //Check if clan IDs match
-        boolean clanIDsMatch = self.getClanID() == opponent.getClanID();
+    /**
+     *
+     * @param self The Player
+     * @param target The character which the player is interacting with.
+     *               If the target is friendly and damaged, the player heals them
+     *               Otherwise the player runs away
+     *
+     * @return the number of action points used
+     */
 
-        //If opponent is in same clan
+    @Override
+    public int decideActionPoints(ClanMember self, ClanMember target) {
+
+        //Check if clan IDs match. If clan ID's match, both belong in the same clan.
+        boolean clanIDsMatch = self.getClanID() == target.getClanID();
+
+        //If target is in same clan
         if (clanIDsMatch) {
-            //If the teammate is significantly damaged --> heal
-            if (opponent.getHitPoints() <= (0.8 * opponent.getMaxHitPoints())) {
+
+            //If teammate is significantly damaged --> heal
+            if (target.getHitPoints() <= (0.8 * target.getMaxHitPoints())) {
                 return actionPoints;
             }
 
-            //If the teammate is mostly undamaged or different clan--> retreat
+            //If teammate still has most of their health or all of their health  --> retreat
             else {
                 return 0;
             }
         }
 
-        //If opponent is in different clan --> retreat
+        //If target is in different clan --> retreat
         else {
             return 0;
         }

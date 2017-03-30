@@ -26,12 +26,12 @@ public class AngryWarriorDecider  implements ActionPointDecider {
         //Check if clan IDs match. If clan ID's match, both are in the same clan.
         boolean clanIDsMatch = self.getClanID() == target.getClanID();
 
-        //If opponent is in a different clan --> fight
+        //If the target is in a different clan --> fight
         if (!clanIDsMatch) {
             return actionPoints;
         }
 
-        //If opponent is in the same clan --> retreat
+        //If the target is in the same clan --> retreat
         else {
             return 0;
         }
