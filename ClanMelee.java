@@ -16,6 +16,8 @@ public class ClanMelee {
         String[] clanNames = new String[totalClanCount];
         ClanStats clanStats = new ClanStats(totalClanCount);
 
+
+        //validateAllClans(clans, hitPoints, participants, clanStats);
         for (Clan clan : clans) {
             int clanID = clan.getClanID();
             String clanName = clan.getClanName();
@@ -30,12 +32,14 @@ public class ClanMelee {
                 clanStats.addPlayer(member);
         }
 
-  
-        int clanCount = totalClanCount;
 
+
+        int clanCount = totalClanCount;
         boolean[] previouslyAlive = new boolean[totalClanCount];
         Arrays.fill(previouslyAlive, true);
         int roundCount = 0;
+
+
 
         while (clanCount > 1) {
             Collections.shuffle(participants);
@@ -43,6 +47,9 @@ public class ClanMelee {
             boolean[] currentlyAlive = new boolean[totalClanCount];
             Arrays.fill(currentlyAlive, false);
             ArrayList<ClanMember> remaining = new ArrayList<>(participants.size());
+
+
+            //runRound(participants, currentlyAlive, remaining, clanStats);
             for (int i = 0; i < participants.size() - 1; i += 2) {
                 ClanMember p1 = participants.get(i);
                 ClanMember p2 = participants.get(i + 1);
@@ -93,13 +100,47 @@ public class ClanMelee {
         if (clanCount == 0) {
             System.out.println("All were slain after " + roundCount
                     + " interactions!");
-        } else {
+        }
+        else {
+            //declareWinner(clanNames, roundCount, clanStats);
             int victorID = clanStats.getWinner();
             System.out.println(clanNames[victorID] + " emerged victorious after " +
                     roundCount + " interactions!");
             clansWins.addWin(victorID);
         }
     }
+
+    public void runRound(ArrayList<ClanMember> participants,
+                         boolean[] membersCurrentlyAlive,
+                         ArrayList<ClanMember> remainingParticipants, ClanStats clanStats) {
+
+        for (int i = 0; i < participants.size() - 1; i += 2) {
+            ClanMember p1 = participants.get(i);
+            ClanMember p2 = participants.get(i + 1);
+
+            runInteraction(p1, p2);
+
+            if (p1.isAlive()) {
+                clanStats.addPlayer(p1);
+                membersCurrentlyAlive[p1.getClanID()] = true;
+                remainingParticipants.add(p1);
+            }
+            if (p2.isAlive()) {
+                clanStats.addPlayer(p2);
+                membersCurrentlyAlive[p2.getClanID()] = true;
+                remainingParticipants.add(p2);
+            }
+        }
+    }
+
+    public void declareWinner(String[] clanNames, int roundCount, ClanStats clanStats) {
+        int victorID = clanStats.getWinner();
+        System.out.println(clanNames[victorID] + " emerged victorious after " +
+                roundCount + " interactions!");
+        clansWins.addWin(victorID);
+    }
+
+
 
     private void runInteraction(ClanMember p1, ClanMember p2) {
         int p1Action = p1.getActionPoints(p2);
@@ -141,6 +182,23 @@ public class ClanMelee {
             return false;
         }
         return true;
+    }
+
+    public void validateAllClans(Collection<Clan> clans, int hitPoints, String[] clanNames,
+                                 ArrayList<ClanMember> participants, ClanStats clanStats) {
+        for (Clan clan : clans) {
+            int clanID = clan.getClanID();
+            String clanName = clan.getClanName();
+            if (clansWins.clanCount() < clans.size())
+                clansWins.addClan(clanID, clanName);
+            Collection<ClanMember> members = clan.getClanMembers(hitPoints);
+            if (!validateClan(members, hitPoints, clanID, clan.getClanName()))
+                continue;
+            clanNames[clanID] = clan.getClanName();
+            participants.addAll(members);
+            for (ClanMember member : members)
+                clanStats.addPlayer(member);
+        }
     }
 }
 

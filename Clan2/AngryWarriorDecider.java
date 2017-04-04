@@ -23,6 +23,7 @@ public class AngryWarriorDecider  implements ActionPointDecider {
      */
     @Override
     public int decideActionPoints(ClanMember self, ClanMember target) {
+
         //Check if clan IDs match. If clan ID's match, both are in the same clan.
         boolean clanIDsMatch = self.getClanID() == target.getClanID();
 
