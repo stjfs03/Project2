@@ -8,7 +8,7 @@ import java.util.Collections;
 import static clanmelee.ClanMember.ClanMemberType.HEALER;
 
 public class ClanMelee {
-    ClansWins clansWins = new ClansWins();
+    ClansWinsManager clansWins = new ClansWinsManager();
 
     public void runMelee(Collection<Clan> clans, int hitPoints) {
         ArrayList<ClanMember> participants = new ArrayList<>();
