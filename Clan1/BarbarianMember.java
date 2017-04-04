@@ -10,7 +10,7 @@ import static clanmelee.ClanMember.ClanMemberType.WARRIOR;
 
 public class BarbarianMember extends Clan {
 
-    // creates a Barbarian ClanMember
+    // creates a Barbarian Clan
     public BarbarianMember(int clanID) {
         super("Barbarian", clanID);
     }
