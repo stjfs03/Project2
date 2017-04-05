@@ -30,7 +30,7 @@ public class AdvancedHealerMember extends Clan{
      * @return: An array list containing all the clan's members.
      */
     @Override
-    public ArrayList<ClanMember> getClanMembers(int hitPoints) {
+    public ArrayList<ClanMember> distributeHP(int hitPoints) {
         ArrayList<ClanMember> clanMembers = new ArrayList<>();
 
         ActionPointDecider decider = new AdvancedHealerDecider(20);
