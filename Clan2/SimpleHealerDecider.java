@@ -14,6 +14,7 @@ public class SimpleHealerDecider implements ActionPointDecider {
      *
      * @param self The Player
      * @param target The character which the player is interacting with.
+     *
      *               If the target is friendly and damaged, the player heals them
      *               Otherwise the player runs away
      *

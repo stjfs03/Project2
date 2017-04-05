@@ -24,9 +24,9 @@ public class AdvancedHealerMember extends Clan{
     }
 
     /**
-     * @Purpose: Getter for a clan's members
-     * @param hitPoints the number of hit points to be distributed amongst all the clan members
-     * @return: An array list containing all the clan's members.
+     * @Purpose: Creates an ArrayList and fills with with the desired number of Healers.
+     * @param hitPoints-the number of hit points used to create the desired healers
+     * @return: The list of created healers.
      */
     @Override
     public ArrayList<ClanMember> getClanMembers(int hitPoints) {

@@ -4,34 +4,49 @@ import clanmelee.ActionPointDecider;
 import clanmelee.ClanMember;
 
 public class SimpleWarriorDecider implements ActionPointDecider {
-        private int actionPoints;
 
-        public SimpleWarriorDecider(int actionPoints) {
+    private int actionPoints;
+
+    public SimpleWarriorDecider(int actionPoints) {
             this.actionPoints = actionPoints;
         }
 
-        @Override
-        public int decideActionPoints(ClanMember self, ClanMember opponent) {
-            //Check if clan IDs match
-            boolean clanIDsMatch = self.getClanID() == opponent.getClanID();
+    /**
+     *
+     * @param self The player
+     * @param target The character which the player is interacting with
+     *
+     *               If the target is an enemy:
+     *                  - If the player is not close to death and the enemy does not have a substantial amount of
+     *                    health which gives them an advantage, then the player attacks.
+     *                  - Else the player runs away
+     *
+     * @return The number of action points used
+     */
+    @Override
+    public int decideActionPoints(ClanMember self, ClanMember target) {
 
-            //If opponent is in different clans
-            if (!clanIDsMatch) {
-                //If self is not close to death and opponent doesn't have an immense health advantage --> attack
-                if ((self.getHitPoints()-actionPoints > 0 && self.getHitPoints()*2 >= opponent.getHitPoints())) {
-                    return actionPoints;
-                }
+        //Check if clan IDs match. If ID's match both are in the same clan
+        boolean clanIDsMatch = self.getClanID() == target.getClanID();
 
-                //If opponent's health advantage is much larger or if self is close to death --> retreat
-                else {
-                    return 0;
-                }
+        //If target is in a different clan
+        if (!clanIDsMatch) {
+
+            //If self is not close to death and opponent has a similar amount of health as the player --> attack
+            if ((self.getHitPoints() - actionPoints > 0 && self.getHitPoints() * 2 >= target.getHitPoints())) {
+                return actionPoints;
             }
 
-            //If opponent is in same clan --> retreat
+            //If opponent's health has a larger amount health or if self is close to death --> retreat
             else {
                 return 0;
             }
         }
+
+        //If target is in the same clan --> retreat
+        else {
+            return 0;
+        }
+    }
 
 }
