@@ -10,7 +10,7 @@ import static clanmelee.ClanMember.ClanMemberType.WARRIOR;
 
 public class BarbarianMember extends Clan {
 
-    // creates a Barbarian Clan
+    // Creates a Clan with the name "Barbarian" and id of clanID
     public BarbarianMember(int clanID) {
         super("Barbarian", clanID);
     }
@@ -18,7 +18,7 @@ public class BarbarianMember extends Clan {
     /**
      *
      * @param hitPoints the number of hit points to be distributed amongst all the clan members
-     * @return a clan of Barbarians
+     * @return a clan (an ArrayList) of Barbarians
      */
     @Override
     public ArrayList<ClanMember> getClanMembers(int hitPoints) {

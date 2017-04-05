@@ -10,15 +10,15 @@ import static clanmelee.ClanMember.ClanMemberType.HEALER;
 
 public class StandardHealerMember extends Clan {
 
-    // creates a Standard Healer Clan
+    // Creates a Clan with the name "Standard Healer" and id of clanID
     public StandardHealerMember(int clanID) {
         super("Standard Healer", clanID);
     }
 
     /**
      *
-     * @param hitPoints the number of hit points to be distributed amongst all the clan members
-     * @return a clan of Standard Healers
+     * @param - hitPoints the number of hit points to be distributed amongst all the clan members
+     * @return - a clan (an ArrayList) of StandardHealers
      */
     @Override
     public ArrayList<ClanMember> getClanMembers(int hitPoints) {
