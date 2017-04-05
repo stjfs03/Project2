@@ -15,8 +15,10 @@ public class SelflessHealerDecider implements ActionPointDecider {
      *
      * @param self The player
      * @param target The character the player is interacting with
+     *
      *               If target are in the same clan as the player, the player heals the target.
      *               Otherwise the player runs away.
+     *
      * @return  The amount of action points used
      */
     @Override
