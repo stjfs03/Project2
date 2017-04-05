@@ -12,7 +12,7 @@ import java.util.Collection;
 public class ClanFactory {
 
     /**
-     * Creates ArrayList of the amount of clans wanted in battle.
+     * Creates ArrayList of with the amount of clans wanted in battle.
      * @return ArrayList of clans created.
      */
     public Collection<Clan> getClans() {
