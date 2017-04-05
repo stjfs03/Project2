@@ -24,7 +24,8 @@ public class AdvancedHealerMember extends Clan{
     }
 
     /**
-     * @Purpose: Getter for a clan's members
+     * @Purpose: Getter for a clan's members that distributes hit pints to the wonded members in the
+     * clan iteratively.
      * @param hitPoints the number of hit points to be distributed amongst all the clan members
      * @return: An array list containing all the clan's members.
      */
