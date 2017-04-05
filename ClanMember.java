@@ -7,7 +7,7 @@ package clanmelee;
 public class ClanMember {
 
     /**
-     * Each clan member can either be a Warrior or a Healer; nothing else
+     * Each c-lan member can either be a Warrior or a Healer; nothing else
      */
     public enum ClanMemberType {WARRIOR, HEALER};
 

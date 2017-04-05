@@ -31,6 +31,8 @@ public class AdvancedHealerDecider implements ActionPointDecider {
     public int decideActionPoints(ClanMember me, ClanMember other) {
         boolean clanIDsMatch = me.getClanID() == other.getClanID();
 
+        //Note: this will also return 0 if clanID's match to prevent combat among
+        //members from the same clan.
         if (clanIDsMatch && other.getHitPoints() < (other.getMaxHitPoints() / 2))
             return actionPoints;
         else
