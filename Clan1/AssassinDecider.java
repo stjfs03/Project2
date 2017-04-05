@@ -34,7 +34,7 @@ public class AssassinDecider implements ActionPointDecider {
 
         if (!clanIDsMatch && other.getType() == WARRIOR) {
 
-            //if opponent's current health is less then or equal to opponet's MaxHealth / 3
+            //if opponent's current health is less then or equal to opponent's MaxHealth / 3
             if (other.getHitPoints() <= (other.getMaxHitPoints() / 3)) {
                 // deal 3x damage
                 return actionPoints * 3;
