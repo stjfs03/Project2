@@ -33,15 +33,17 @@ public class AssassinDecider implements ActionPointDecider {
         boolean clanIDsMatch = me.getClanID() == other.getClanID();
 
         if (!clanIDsMatch && other.getType() == WARRIOR) {
-            //if warrior's hp is <= a third of his max health: deal 3x damage?
+
+            //if opponent's current health is less then or equal to opponet's MaxHealth / 3
             if (other.getHitPoints() <= (other.getMaxHitPoints() / 3)) {
+                // deal 3x damage
                 return actionPoints * 3;
             }
             else { //else deal normal damage
                 return actionPoints;
             }
         }
-        //if the opponent is a healer, deal 2x damage?
+        //if the opponent is a healer deal 2x damage
         if (!clanIDsMatch && other.getType() == HEALER) {
             return actionPoints * 2;
         }
