@@ -17,8 +17,10 @@ public class AngryWarriorDecider  implements ActionPointDecider {
      *
      * @param self The player
      * @param target The character the player is interacting with.
+     *
      *               If target is friendly, the player runs away.
      *               If the target is an enemy, the player attacks.
+     *
      * @return the amount of actionPoints used
      */
     @Override
