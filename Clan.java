@@ -12,7 +12,7 @@ public abstract class Clan {
     /**
      * @Purpose: Constructor that creates a clan
      *
-     * @param: clanName name of the clan
+     * @param: clanName name of the member
      * @param: clanID   the clan's unique ID
      *
      * @return: None (Is a constructor).
@@ -21,7 +21,7 @@ public abstract class Clan {
         this.clanName = clanName;
         this.clanID = clanID;
     }
-    
+
 
     /**
      * @Purpose: Gets the clan ID
