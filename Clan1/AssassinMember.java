@@ -15,7 +15,7 @@ public class AssassinMember extends Clan {
 
     // Creates a Clan with the name "Assassin" and id of clanID
     public AssassinMember(int clanID) {
-        super("Clan1", clanID);
+        super("Assassin", clanID);
     }
 
     /**
