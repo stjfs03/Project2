@@ -10,7 +10,7 @@ import static clanmelee.ClanMember.ClanMemberType.HEALER;
 
 public class StandardHealerMember extends Clan {
 
-    // creates a Standard Healer ClanMember
+    // creates a Standard Healer Clan
     public StandardHealerMember(int clanID) {
         super("Standard Healer", clanID);
     }
