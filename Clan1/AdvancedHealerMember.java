@@ -24,12 +24,12 @@ public class AdvancedHealerMember extends Clan{
     }
 
     /**
-     * @Purpose: Getter for a clan's members
+     * @Purpose: Creates an ArrayList and fills with with the desired number of Healers.
      * @param hitPoints the number of hit points to be distributed amongst all the clan members
      * @return: An array list containing all the clan's members.
      */
     @Override
-    public ArrayList<ClanMember> getClanMembers(int hitPoints) {
+    public ArrayList<ClanMember> createHealerList(int hitPoints) {
         ArrayList<ClanMember> clanMembers = new ArrayList<>();
 
         ActionPointDecider decider = new AdvancedHealerDecider(20);
