@@ -19,7 +19,8 @@ extend the abstract class `Clan` by implementing the `getClanMembers()`
 method. The constructor to your factory needs to take a clan ID (as an
 int). The `getClanMembers()` method takes an integer number of hit points as a
 parameter. Your method should distribute these hit points over some number of
-clan members, and return them as some sort of `Collection<ClanMember>`.
+clan members, and return them as some sort of `Collection<ClanMember>`. Each unique clan
+can be found in their retrospective package named `clanmelee.<your last name>`.
 
 ### Clan Members
 
@@ -137,14 +138,14 @@ but it is recommended so that you always have a backup.
 When it comes time to run the project with everyone's code combined, I will
 pull your code from your bare repository on groot.
 
-### UML Diagrams
+### UML Diagram
 
-Create UML diagrams for your classes with appropriate connectors.
+A detailed UML diagram of the program.
 
 ### Packages
 
-Put all your code in a package called `clanmelee.<your last name>`. Do not edit
-any of the code in the `clanmelee` package.
+Each member of the team has their own clan with its strategy classes in `clanmelee.<your last name>`. The entire
+program is contained in the `clanmelee` package.
 
 ## Grading
 
