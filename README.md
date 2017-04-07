@@ -30,13 +30,14 @@ reduced by 1. If the `ClanMember` has more than the maximum number of hit
 points, the current hit points will be reduced to the maximum. The initial
 maximum hit points for a clan member is capped at 1000.
 
-There are two types of clan members: warriors and healers. When one of your
+There are two types of clan members: warriors and healers. However, you can have 
+different varients of warriors or healers such as assassins, barbarians, etc. When one of your
 clan members interacts with another participant of the melee, the
 `decideActionPoints()` method will be called. This provides your `ClanMember`
 with the type, clan ID, current number of hit points, and current maximum
 number of hit points of the other `ClanMember` in the
 interaction. `decideActionPoints()` then returns the number of action points to
-perform this interaction.
+perform this interaction. The melee interaction is better explained later in the Melee Action.
 
 `decideActionPoints()` relies on an `ActionPointDecider` object to get the
 number of action points to perform. The `ClanMember` constructor requires an
@@ -51,13 +52,13 @@ may be easier to organize your code if you create superclasses that extend
 
 ### Action Points
 
-A `ClanMember` may perform a veriable number of action points during an
+A `ClanMember` may perform a variable number of action points during an
 interaction. 0 or a negative number of action points corresponds with running
 away. Positive non-zero action points performed correspond to damage from a
 warrior or heal points from a healer.
 
 Any warrior or healer may perform up to 10 action points with no
-penalty. However, additional action points will cost a penalty in hit
+penalty. This is known as iteration damage. However, additional action points will cost a penalty in hit
 points. A `ClanMember` may perform 2 additional action points for each penalty
 point taken. For example, 11 or 12 action points cost 1 penalty hit point, 13 or
 14 action points cost 2 penalty hit points, etc.
