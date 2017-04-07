@@ -100,6 +100,10 @@ following total hit point values there will be 5 rounds:
 * 1,000,000
 * 10,000,000
 
+These total hit point values will be distributed among each clan members. This means that you cannot have 
+one clan member with 10,000,000 hit points. The limit for the number of hit points one clan member can have
+is 1,000.
+
 Each round's actual hit points will be +/- 5% of the base hit point value. For
 example, each 100 round will have actual total hit points between 95 and 105.
 
