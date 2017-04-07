@@ -90,7 +90,7 @@ remaining participants are from the same clan, that clan wins.
 
 ### Rounds
 
-For the final evaluation, 30 rounds of melees will be run. For each of the
+In total, there will be 30 melee simulations. For each of the
 following total hit point values there will be 5 rounds:
 
 * 100
@@ -119,7 +119,7 @@ least 2 types of healers and 2 types of warriors.
 
 You need at least 1 factory to provide the program with your clan
 members. However, if the code for your factory becomes too complicated, you may
-want to break it up into a heirarchy of factories, each of which produces a
+want to break it up into a hierarchy of factories, each of which produces a
 different type of `ClanMember` and/or `ActionPointDecider`. If you have
 multiple factories, you still need 1 main factory that returns all of the
 created clan members.
@@ -140,7 +140,7 @@ After you clone this repository, create a bare repository on groot called
 but it is recommended so that you always have a backup.
 
 When it comes time to run the project with everyone's code combined, I will
-pull your code from your bare repository on groot.
+pull your code from your bare repository on root.
 
 ### UML Diagram
 
