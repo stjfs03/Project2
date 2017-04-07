@@ -8,8 +8,8 @@ public class Main {
 
     private static Random rand = new Random();
 
-    // Is used to determine the number of base hit points for a clan
-    private static int determineHitPoints(int original) {
+    // Is used to determine the number of base hit points for a clan that is slighty off for competition.
+    private static int determineOffHitPoints(int original) {
         int amount = rand.nextInt((int) (original * 0.05));
         if (rand.nextDouble() < 0.5)
             return original + amount;
@@ -26,7 +26,7 @@ public class Main {
         int round = 1;
         for (int baseHitPoints : allBaseHitPoints) {
             for (int i = 0; i < 5; i++) {
-                int hitPoints = determineHitPoints(baseHitPoints);
+                int hitPoints = determineOffHitPoints(baseHitPoints);
 
                 System.out.println("Round " + round + ", " + hitPoints
                         + " hit points per clan");
