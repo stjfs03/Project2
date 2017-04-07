@@ -66,13 +66,16 @@ point taken. For example, 11 or 12 action points cost 1 penalty hit point, 13 or
 ### Melee Action
 
 During each round of a melee, participants (individual clan members) will be
-randomly paired up with one another. If there are an odd number of
-participants, one random participant will sit the round out.
+randomly paired up with one another. One clan member will be declared Player 1 and the
+other Player 2. This determination is also random. Player 1 will always get to make
+their move first however, Player 2 will still get to make a move even if they have 0 hit
+points. If there are an odd number of
+participants, one random participant will sit the round out. 
 
 Each pair will interact. Each participant of each interaction will know the
 type, clan ID, number of hit points, and maximum number of hit points of the
 other participant. Each clan member must decide how many action points to
-perform.
+perform. 
 
 If both participants perform positive, non-zero action points then the points
 will be dealt as damage or heal points accordingly. If one participant runs
