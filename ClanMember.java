@@ -126,6 +126,8 @@ public class ClanMember {
      */
     public void dealIterationDamage(int actionPoints) {
 
+
+        // if actionPoints is greater than 10, you are damaged for (actionPoints - 11)/3
         if (actionPoints > FREE_ACTION_POINTS) {
 
             int damage = (actionPoints - FREE_ACTION_POINTS - 1) / ACTION_POINTS_PER_ITERATION_DAMAGE_POINT + 1;

@@ -13,6 +13,7 @@ public class ClanMelee {
 
     /**
      * Begins the Melee
+     *
      * @param clans the Clans in the Melee
      * @param hitPoints the amount of hitpoints each ClanMember begins with in the Melee
      */
@@ -49,6 +50,7 @@ public class ClanMelee {
     public void runBattle(int clanCount, ArrayList<ClanMember> participants,
                           ClanStats clanStats, int totalClanCount, int roundCount,
                           boolean[] previouslyAlive, String[] clanNames) {
+
         while (clanCount > 1) {
             Collections.shuffle(participants);
             clanStats = new ClanStats(totalClanCount);
