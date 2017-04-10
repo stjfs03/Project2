@@ -1,4 +1,4 @@
-# Project #1 - Clan Melee
+# Project #2 - Clan Melee
 
 ## Goals
 
