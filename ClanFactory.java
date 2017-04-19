@@ -3,7 +3,7 @@ package clanmelee;
 import clanmelee.Balga.BalgaClan;
 import clanmelee.Clan1.Clan1;
 import clanmelee.Clan2.Clan2;
-import clanmelee.ClanStocker.ClanStocker;
+import clanmelee.Stocker.ClanStocker;
 
 import java.util.ArrayList;
 import java.util.Collection;
