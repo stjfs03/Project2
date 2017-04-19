@@ -1,4 +1,4 @@
-package clanmelee.ClanStocker;
+package clanmelee.Stocker;
 import clanmelee.ActionPointDecider;
 import clanmelee.ClanMember;
 

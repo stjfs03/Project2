@@ -1,8 +1,9 @@
 package clanmelee;
 
+import clanmelee.Balga.BalgaClan;
 import clanmelee.Clan1.Clan1;
 import clanmelee.Clan2.Clan2;
-import clanmelee.ClanStocker.ClanStocker;
+import clanmelee.Stocker.ClanStocker;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -24,6 +25,7 @@ public class ClanFactory {
         clans.add(new Clan1(clanID++));
         clans.add(new Clan2(clanID++));
         clans.add(new ClanStocker(clanID++));
+        clans.add(new BalgaClan(clanID++));
 
 
         return clans;

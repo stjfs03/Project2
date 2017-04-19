@@ -1,12 +1,11 @@
-package clanmelee.ClanStocker;
-
-
+package clanmelee.Stocker;
 import clanmelee.ActionPointDecider;
 import clanmelee.ClanMember;
 
-public class DrLuigiHealerDecider implements ActionPointDecider {
+public class WarriorWarriorDecider implements ActionPointDecider {
     private int actionPoints;
-    public DrLuigiHealerDecider(int actionPoints) {
+
+    public WarriorWarriorDecider(int actionPoints) {
         this.actionPoints = actionPoints;
     }
 
@@ -16,10 +15,14 @@ public class DrLuigiHealerDecider implements ActionPointDecider {
         boolean clanIDsMatch = self.getClanID() == target.getClanID();
 
         if (clanIDsMatch) {
-            return actionPoints;
+            return 0;
         }
         else {
-            return 0;
+            if(target.getHitPoints() > 10)
+                return actionPoints;
+            else{
+                return 10;
+            }
         }
     }
 }
