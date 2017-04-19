@@ -15,6 +15,7 @@ public class HealerHealerDecider implements ActionPointDecider {
     }
 
     /**
+     *
      * @param player the player who's turn it is
      * @param target the character that the player wants to interact with
      * @return the magnitude of an action (attacking or healing) . A player runs away if Action points are 0 or
@@ -24,12 +25,14 @@ public class HealerHealerDecider implements ActionPointDecider {
     public int decideActionPoints(ClanMember player, ClanMember target) {
         boolean clanIDsMatch = player.getClanID() == target.getClanID();
 
+        // If the opponent is in the same clan and is also a healer, that healer will be healed.
         if (clanIDsMatch) {
             if (target.getType().equals(ClanMember.ClanMemberType.HEALER)) {
                 return actionPoints;
             }
         }
 
+        // The healer will run if the opponent is not in the same clan.
         return 0;
     }
 }

@@ -25,9 +25,12 @@ public class BadWarriorDecider implements ActionPointDecider {
     public int decideActionPoints(ClanMember player, ClanMember target) {
         boolean clanIDsMatch = player.getClanID() == target.getClanID();
 
+        // If the opponent is not in the same clan, the warrior will attack.
         if (!clanIDsMatch) {
             return (actionPoints * 2) + 10;
         }
+
+        // If the opponent is in the same clan, the warrior will run.
         else {
             return 0;
         }
