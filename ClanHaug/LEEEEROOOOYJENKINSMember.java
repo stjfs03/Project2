@@ -1,4 +1,4 @@
-package clanmelee.ClanHAUUUUG;
+package clanmelee.ClanHaug;
 
 import clanmelee.ActionPointDecider;
 import clanmelee.Clan;
@@ -26,7 +26,7 @@ public class LEEEEROOOOYJENKINSMember extends Clan {
 
         ActionPointDecider decider = new LEEEEROOOOYJENKINSMemberDecider();
 
-        int adjHitPoints = (int)(hitPoints * .50);
+        int adjHitPoints = hitPoints;
 
         while (adjHitPoints > 0) {
             int nextHP = 950;

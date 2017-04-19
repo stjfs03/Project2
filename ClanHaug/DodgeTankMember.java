@@ -1,4 +1,4 @@
-package clanmelee.ClanHAUUUUG;
+package clanmelee.ClanHaug;
 
 import clanmelee.ActionPointDecider;
 import clanmelee.Clan;
@@ -26,7 +26,8 @@ public class DodgeTankMember extends Clan {
 
         ActionPointDecider decider = new DodgeTankMemberDecider();
 
-        int adjHitPoints = (int)(hitPoints * .90);
+        int adjHitPoints = hitPoints;
+
         while (adjHitPoints > 0) {
             int nextHP = 999;
             if (adjHitPoints < 999)

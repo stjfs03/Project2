@@ -1,4 +1,4 @@
-package clanmelee.ClanHAUUUUG;
+package clanmelee.ClanHaug;
 
 import clanmelee.ActionPointDecider;
 import clanmelee.ClanMember;
