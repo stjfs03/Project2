@@ -4,9 +4,9 @@ import clanmelee.Clan;
 import clanmelee.ClanMember;
 import java.util.ArrayList;
 
-public class SpirkClan extends Clan {
+public class spirkClan extends Clan {
 
-    public SpirkClan(int clanID) {
+    public spirkClan(int clanID) {
         super("SpirkClan", clanID);
     }
 
