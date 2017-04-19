@@ -4,6 +4,7 @@ import clanmelee.Balga.BalgaClan;
 import clanmelee.Clan1.Clan1;
 import clanmelee.Clan2.Clan2;
 import clanmelee.ClanHaug.ClanHaug;
+import clanmelee.Madilia.MadiliaClan;
 import clanmelee.Obrien.ObrienClan;
 import clanmelee.Sobrino.SobrinoClan;
 import clanmelee.Spirk.spirkClan;
@@ -34,6 +35,7 @@ public class ClanFactory {
         clans.add(new ObrienClan(clanID++));
         clans.add(new SobrinoClan(clanID++));
         clans.add(new spirkClan(clanID++));
+        clans.add(new MadiliaClan(clanID++));
 
 
         return clans;
