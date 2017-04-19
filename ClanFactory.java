@@ -35,7 +35,7 @@ public class ClanFactory {
         clans.add(new ObrienClan(clanID++));
         clans.add(new SobrinoClan(clanID++));
         clans.add(new spirkClan(clanID++));
-        clans.add(new MadiliaClan(clanID++));
+        //clans.add(new MadiliaClan(clanID++));
 
 
         return clans;

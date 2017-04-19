@@ -29,8 +29,8 @@ public class DodgeTankMember extends Clan {
         int adjHitPoints = hitPoints;
 
         while (adjHitPoints > 0) {
-            int nextHP = 999;
-            if (adjHitPoints < 999)
+            int nextHP = 1000;
+            if (adjHitPoints < 1000)
                 nextHP = adjHitPoints;
 
             clanMembers.add(new ClanMember(getClanID(), WARRIOR, nextHP, decider));
