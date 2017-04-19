@@ -62,7 +62,7 @@ public class ObrienClan extends Clan {
                 }
 
                 else {
-                    if (Math.random() > 0..7) {
+                    if (Math.random() > 0.7) {
                         clanMembers.add(new ClanMember(getClanID(), HEALER, nextHpAssignment, obrienHealerDecider));
                     }
 
