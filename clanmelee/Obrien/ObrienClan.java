@@ -46,13 +46,13 @@ public class ObrienClan extends Clan {
 
 
             while (unassignedHP > 0) {
-                nextHpAssignment = totalHP/10;
-                if (unassignedHP < totalHP/10) {
+                nextHpAssignment = totalHP/50;
+                if (unassignedHP < totalHP/50) {
                     nextHpAssignment = unassignedHP;
                 }
 
-                if (Math.random() > 0.5) {
-                    if (Math.random() > 0.5) {
+                if (Math.random() > 0.7) {
+                    if (Math.random() > 0.7) {
                         clanMembers.add(new ClanMember(getClanID(), WARRIOR, nextHpAssignment, obrienWarriorDecider));
                     }
 
@@ -62,7 +62,7 @@ public class ObrienClan extends Clan {
                 }
 
                 else {
-                    if (Math.random() > 0.5) {
+                    if (Math.random() > 0..7) {
                         clanMembers.add(new ClanMember(getClanID(), HEALER, nextHpAssignment, obrienHealerDecider));
                     }
 
