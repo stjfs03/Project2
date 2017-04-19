@@ -72,7 +72,7 @@ public class SobrinoClan extends Clan {
                 if (unassignedHP < 5000) {
                     nextWarriorHPAssignment = unassignedHP;
                 }
-                clanMembers.add(new ClanMember(getClanID(), WARRIOR, nextWarriorHPAssignment, braveDecider));
+                //clanMembers.add(new ClanMember(getClanID(), WARRIOR, nextWarriorHPAssignment, braveDecider));
                 clanMembers.add(new ClanMember(getClanID(), WARRIOR, nextWarriorHPAssignment, regularDecider));
 
                 unassignedHP -= nextWarriorHPAssignment;
@@ -84,7 +84,7 @@ public class SobrinoClan extends Clan {
                     nextHealerHPAssignment = unassignedHP;
                 }
                 clanMembers.add(new ClanMember(getClanID(), HEALER, nextHealerHPAssignment, doctorDecider));
-                clanMembers.add(new ClanMember(getClanID(), HEALER, nextHealerHPAssignment, assistantDecider));
+                //clanMembers.add(new ClanMember(getClanID(), HEALER, nextHealerHPAssignment, assistantDecider));
 
                 unassignedHP -= nextHealerHPAssignment;
             }

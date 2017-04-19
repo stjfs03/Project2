@@ -6,7 +6,7 @@ import clanmelee.Clan2.Clan2;
 import clanmelee.ClanHaug.ClanHaug;
 import clanmelee.Obrien.ObrienClan;
 import clanmelee.Sobrino.SobrinoClan;
-import clanmelee.Spirk.SpirkClan;
+import clanmelee.Spirk.spirkClan;
 import clanmelee.Stocker.ClanStocker;
 
 import java.util.ArrayList;
@@ -33,7 +33,7 @@ public class ClanFactory {
         clans.add(new ClanHaug(clanID++));
         clans.add(new ObrienClan(clanID++));
         clans.add(new SobrinoClan(clanID++));
-        //clans.add(new SpirkClan(clanID++));
+        clans.add(new spirkClan(clanID++));
 
 
         return clans;
